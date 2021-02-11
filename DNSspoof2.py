@@ -62,7 +62,7 @@ def handle_packet_fn(iface, spoof_ip, spoof_domains):
             #print("Resolved DNS request for %s to %s for %s" %
             #        (queried_host, resolved_ip, ip.src))
 
-            # Use scapy to send our response back to your phone.
+            # Use scapy to send our response back to your machine.
             send(dns_response, iface=iface)
         else:
             print("Ignoring unrecognized packet from %s" % ip.src)
